@@ -1,7 +1,7 @@
 # 단계 0 프롬프트 — 요구사항 확정
 
 ```text
-목적: 구현 전에 지출 집계와 동기화에 영향을 주는 제품 결정을 명확히 기록한다.
+목적: 구현 전에 매출·지출 집계와 동기화에 영향을 주는 제품 결정을 명확히 기록한다.
 
 `AGENTS.md`, `docs/01-mvp-requirements.md`, `docs/03-data-model.md`, `docs/04-sync-and-backup.md`, `docs/decisions.md`를 읽어라.
 

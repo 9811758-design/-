@@ -51,7 +51,9 @@ test("focuses a runtime validation error without losing purchase input", async (
   await expect(page.getByLabel("재료명")).toHaveValue("원두")
 })
 
-test("moves between calendar dates with the keyboard and announces full amounts", async ({ page }) => {
+test("moves between calendar dates with the keyboard and announces full amounts", async ({
+  page,
+}) => {
   await page.goto("/analytics")
   const selected = page.locator('.calendar-day[aria-pressed="true"]')
   await selected.focus()
