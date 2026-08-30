@@ -1,0 +1,56 @@
+.sync-status-card,
+.sheet-choice-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.sync-status-card > p,
+.sheet-choice-card > p,
+.card-copy {
+  margin: 0;
+  color: var(--color-ink-muted);
+  line-height: 1.5;
+}
+
+.sync-document {
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+
+.sync-error {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  color: var(--color-danger);
+  background: var(--color-danger-light);
+  border: 1px solid var(--color-danger);
+  border-radius: 10px;
+  word-break: keep-all;
+}
+
+.sync-error span,
+.form-help {
+  font-size: 13px;
+}
+
+.sync-actions {
+  align-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-copy {
+  word-break: keep-all;
+}
+
+.backup-guide ul {
+  display: grid;
+  gap: var(--space-2);
+  padding-inline-start: var(--space-5);
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: keep-all;
+}

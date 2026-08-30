@@ -1,0 +1,271 @@
+@import "./styles/components.css";
+@import "./styles/forms.css";
+@import "./styles/analytics.css";
+@import "./styles/settings.css";
+@import "./styles/pwa.css";
+
+:root {
+  --color-canvas: #f5f0e8;
+  --color-surface: #fffcf7;
+  --color-glass: rgb(255 252 247 / 62%);
+  --color-glass-highlight: rgb(255 255 255 / 82%);
+  --color-glass-strong: rgb(255 252 247 / 88%);
+  --color-glass-border: rgb(255 255 255 / 84%);
+  --color-ink: #241b16;
+  --color-ink-muted: #695f56;
+  --color-brand: #315c4f;
+  --color-brand-strong: #1e4037;
+  --color-brand-light: #dde9e0;
+  --color-copper: #a65e2e;
+  --color-success: #1d6b4a;
+  --color-success-light: #dcefe6;
+  --color-warning: #86520a;
+  --color-warning-light: #f7eac7;
+  --color-danger: #b42318;
+  --color-danger-light: #fde8e7;
+  --color-border: #d8cec0;
+  --color-border-strong: #85705f;
+  --color-sage-wash: rgb(126 161 145 / 32%);
+  --color-oat-wash: rgb(255 232 204 / 50%);
+  --color-canvas-glass: rgb(255 252 247 / 46%);
+  --shadow-surface:
+    inset 0 1px 0 var(--color-glass-border), 0 2px 4px rgb(71 48 31 / 7%),
+    0 16px 36px rgb(71 48 31 / 10%);
+  --shadow-raised: inset 0 1px 0 var(--color-glass-border), 0 18px 40px rgb(71 48 31 / 20%);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-block-size: 100%;
+  margin: 0;
+}
+
+body {
+  block-size: 100dvb;
+  background:
+    radial-gradient(circle at 0% 42%, var(--color-sage-wash), transparent 30rem),
+    var(--color-canvas);
+}
+
+button,
+a {
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  inline-size: 100%;
+  max-inline-size: 960px;
+  block-size: 100dvb;
+  margin-inline: auto;
+  background:
+    radial-gradient(circle at 0% 12%, var(--color-sage-wash), transparent 24rem),
+    radial-gradient(circle at 100% 28%, var(--color-oat-wash), transparent 26rem),
+    linear-gradient(155deg, var(--color-canvas-glass), transparent 56%);
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 10;
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--space-2);
+  min-block-size: 44px;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-surface);
+  background: var(--color-brand);
+  border-radius: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.app-shell__header,
+.app-shell__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.app-shell__header {
+  color: var(--color-surface);
+  background: linear-gradient(110deg, var(--color-brand-strong), var(--color-brand));
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.app-shell__header-status {
+  color: var(--color-brand-light);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.app-shell__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.brand-logo {
+  display: block;
+  inline-size: 84px;
+  block-size: 92px;
+  background-image: url("/brand/kookbong-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 240px auto;
+  border-radius: 16px;
+  mix-blend-mode: multiply;
+}
+
+.brand-logo--header {
+  flex: 0 0 auto;
+  inline-size: 36px;
+  block-size: 36px;
+  background-color: #fff;
+  background-position: center 34%;
+  background-size: 110px auto;
+  border-radius: 50%;
+  mix-blend-mode: normal;
+}
+
+.app-shell__body {
+  min-inline-size: 0;
+  min-block-size: 0;
+  overflow: auto;
+  padding: var(--space-4);
+}
+
+.app-shell__body:focus {
+  outline-offset: -3px;
+}
+
+.app-shell__footer {
+  color: var(--color-ink-muted);
+  background: linear-gradient(135deg, var(--color-glass-highlight), var(--color-glass-strong));
+  border-block-start: 1px solid var(--color-border);
+  backdrop-filter: blur(18px) saturate(116%);
+  font-size: 14px;
+}
+
+.status-panel {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: linear-gradient(135deg, var(--color-glass-highlight), var(--color-glass));
+  border: 1px solid var(--color-glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-surface);
+  backdrop-filter: blur(18px) saturate(116%);
+}
+
+.status-panel__icon {
+  display: grid;
+  inline-size: 44px;
+  block-size: 44px;
+  place-items: center;
+  color: var(--color-surface);
+  background: var(--color-brand);
+  border-radius: 50%;
+}
+
+.status-panel h1,
+.status-panel p {
+  margin: 0;
+}
+
+.status-panel h1 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.status-panel__summary {
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.status-panel__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-success);
+  font-size: 14px;
+}
+
+.error-page {
+  display: grid;
+  min-block-size: 100dvb;
+  align-content: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background: var(--color-canvas);
+}
+
+.error-page h1,
+.error-page p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .app-shell__body,
+  .app-shell__header,
+  .app-shell__footer {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+    transition-duration: 0ms;
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .app-shell__footer,
+  .action-card,
+  .surface-card,
+  .status-panel,
+  .metric-card,
+  .bottom-nav,
+  .pwa-toast {
+    background: var(--color-surface);
+  }
+}

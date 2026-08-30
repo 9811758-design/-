@@ -1,0 +1,419 @@
+.dashboard-metrics,
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-3);
+}
+
+.metric-card {
+  display: grid;
+  gap: var(--space-2);
+  min-block-size: 92px;
+  align-content: center;
+  padding: var(--space-4);
+  background: linear-gradient(135deg, var(--color-glass-highlight), var(--color-glass));
+  border: 1px solid var(--color-glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-surface);
+  backdrop-filter: blur(18px) saturate(116%);
+}
+
+.metric-card span {
+  color: var(--color-ink-muted);
+  font-size: 13px;
+}
+
+.metric-card strong {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-card--spending {
+  border-color: var(--color-copper);
+}
+
+.metric-card--spending strong {
+  color: var(--color-copper);
+}
+
+.metric-card--revenue {
+  border-color: var(--color-brand);
+}
+
+.metric-card--revenue strong {
+  color: var(--color-brand);
+}
+
+.metrics-section,
+.dashboard-metrics {
+  grid-column: 1 / -1;
+}
+
+.metrics-section {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.metrics-section .empty-state {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.period-picker,
+.filter-card {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.period-picker label,
+.filter-card > label {
+  display: grid;
+  gap: var(--space-2);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.period-picker select,
+.period-picker input,
+.filter-card > label select {
+  inline-size: 100%;
+  min-block-size: 48px;
+  padding-inline: var(--space-3);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 10px;
+  font: inherit;
+}
+
+.history-list-card {
+  min-inline-size: 0;
+}
+
+.ledger-list .history-item {
+  display: block;
+}
+
+.history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.history-amount {
+  display: grid;
+  flex: 0 0 auto;
+  justify-items: end;
+  gap: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.transaction-editor {
+  margin-block-start: var(--space-4);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px dashed var(--color-border);
+}
+
+.analytics-detail {
+  min-inline-size: 0;
+}
+
+.calendar-card,
+.selected-day-card {
+  grid-column: 1 / -1;
+  min-inline-size: 0;
+}
+
+.calendar-card {
+  padding: var(--space-2);
+}
+
+.calendar-toolbar {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: end;
+  gap: var(--space-2);
+  margin-block-end: var(--space-2);
+}
+
+.calendar-toolbar label {
+  display: grid;
+  gap: var(--space-1);
+  color: var(--color-brand-strong);
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.calendar-toolbar input {
+  inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 44px;
+  padding-inline: var(--space-2);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 10px;
+  font: inherit;
+}
+
+.calendar-month-button {
+  display: grid;
+  inline-size: 44px;
+  block-size: 44px;
+  place-items: center;
+  color: var(--color-brand-strong);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-block: var(--space-2);
+  color: var(--color-ink-muted);
+  font-size: 12px;
+}
+
+.calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.legend-dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot--revenue {
+  background: var(--color-brand);
+}
+
+.legend-dot--spending {
+  background: var(--color-copper);
+}
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.calendar-grid {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.calendar-weekdays span {
+  padding-block: var(--space-1);
+  color: var(--color-ink-muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.calendar-day,
+.calendar-placeholder {
+  min-inline-size: 0;
+  min-block-size: 72px;
+}
+
+.calendar-day {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 1px;
+  padding: 5px 3px;
+  overflow: hidden;
+  color: var(--color-ink);
+  background: rgb(255 252 247 / 72%);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: start;
+}
+
+.calendar-day strong {
+  font-size: 12px;
+}
+
+.calendar-day small {
+  max-inline-size: 100%;
+  overflow: hidden;
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-day__revenue {
+  color: var(--color-brand);
+}
+
+.calendar-day__spending {
+  color: var(--color-copper);
+}
+
+.calendar-day__ratio {
+  color: var(--color-ink-muted);
+}
+
+.calendar-day.is-today {
+  border-color: var(--color-copper);
+}
+
+.calendar-day.is-selected {
+  color: var(--color-brand-strong);
+  background: var(--color-brand-light);
+  border-color: var(--color-brand);
+  box-shadow: inset 0 0 0 1px var(--color-brand);
+}
+
+.day-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+}
+
+.day-summary-grid div {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: rgb(255 252 247 / 62%);
+  border-radius: 10px;
+}
+
+.day-summary-grid div:last-child {
+  grid-column: 1 / -1;
+}
+
+.day-summary-grid dt {
+  color: var(--color-ink-muted);
+  font-size: 12px;
+}
+
+.day-summary-grid dd {
+  margin: 0;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar-detail-list {
+  margin-block-start: var(--space-3);
+}
+
+.calendar-empty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.breakdown-list,
+.trend-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breakdown-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.breakdown-list small,
+.trend-list small {
+  color: var(--color-ink-muted);
+}
+
+.trend-list li,
+.trend-list li > div {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.trend-list li > div {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.trend-track {
+  display: block;
+  overflow: hidden;
+  block-size: 8px;
+  background: var(--color-brand-light);
+  border-radius: 999px;
+}
+
+.trend-fill {
+  display: block;
+  block-size: 100%;
+  background: var(--color-brand);
+  border-radius: inherit;
+}
+
+.trend-fill--revenue {
+  background: var(--color-brand);
+}
+
+.trend-fill--spending {
+  background: var(--color-copper);
+}
+
+@media (min-width: 768px) {
+  .dashboard-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .history-list-card {
+    grid-column: 1 / -1;
+  }
+
+  .analytics-detail {
+    display: block;
+  }
+
+  .calendar-card {
+    padding: var(--space-4);
+  }
+
+  .calendar-day,
+  .calendar-placeholder {
+    min-block-size: 92px;
+  }
+
+  .calendar-day {
+    gap: 3px;
+    padding: var(--space-2);
+  }
+
+  .calendar-day strong {
+    font-size: 14px;
+  }
+
+  .calendar-day small {
+    font-size: 11px;
+  }
+
+  .day-summary-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .day-summary-grid div:last-child {
+    grid-column: auto;
+  }
+}

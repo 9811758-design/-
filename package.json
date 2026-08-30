@@ -1,0 +1,45 @@
+{
+  "name": "cafe-ledger-pwa",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.19.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "biome check .",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:pwa": "playwright test --config=playwright.pwa.config.ts",
+    "react:doctor": "react-doctor --json"
+  },
+  "dependencies": {
+    "dexie": "4.4.5",
+    "lucide-react": "1.37.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router": "8.3.1",
+    "vite-plugin-pwa": "1.3.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.11",
+    "@playwright/test": "1.62.1",
+    "@testing-library/react": "16.3.3",
+    "@types/node": "26.4.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "@vitejs/plugin-react": "6.1.1",
+    "fake-indexeddb": "6.2.5",
+    "jsdom": "30.0.1",
+    "react-doctor": "0.9.12",
+    "react-grab": "0.2.0",
+    "react-scan": "0.5.7",
+    "typescript": "7.0.2",
+    "vite": "8.2.2",
+    "vitest": "4.1.11",
+    "workbox-window": "7.4.1"
+  }
+}

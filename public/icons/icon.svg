@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="카페 장부 아이콘">
+  <rect width="512" height="512" rx="112" fill="#006241"/>
+  <rect x="118" y="72" width="276" height="368" rx="48" fill="#f6efe0"/>
+  <path d="M176 152h160M176 212h112M176 272h160" fill="none" stroke="#006241" stroke-linecap="round" stroke-width="24"/>
+  <path d="M176 328h112v38a48 48 0 0 1-48 48h-16a48 48 0 0 1-48-48v-38Z" fill="#1e3932"/>
+  <path d="M288 342h24a30 30 0 0 1 0 60h-18" fill="none" stroke="#1e3932" stroke-linecap="round" stroke-width="18"/>
+</svg>
